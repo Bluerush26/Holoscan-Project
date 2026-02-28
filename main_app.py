@@ -4,7 +4,8 @@ from holoscan.operators import (
     FormatConverterOp,
     InferenceOp
 )
-# import custom navigation op once made
+from operators.yolo_op import YOLOInferenceOp
+from operators.navigation_op import NavigationOp
 
 class AssistiveNavApp(Application):
     def compose(self):
@@ -12,7 +13,7 @@ class AssistiveNavApp(Application):
             self,
             name="video_source"
             directory="data"
-            basename="hallway_demo"
+            basename="tester"
             extension=".mp4"
             loop=True
         )
